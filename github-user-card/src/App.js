@@ -1,19 +1,22 @@
 import React from 'react';
 import './App.css';
-import Card from "./component/UserCard"
+import Card from "./component/UserCard.js"
+import Followers from "./component/UserCard.js"
+
 
 class App extends React.Component {
 constructor() {
   super(); 
   this.state = {
-    user: []
-
+    user: [],
+    followers: []
   }
 }
 
 
 componentDidMount() {
   this.fetchUsers() 
+  this.fetchFollowers()
 }
 
 
@@ -23,6 +26,18 @@ fetchUsers = () => {
     return response.json(); 
   })
   .then(res => this.setState({user: res}))
+
+  .catch(error => {
+    console.log("ERROR", error)
+  })
+}
+
+fetchFollowers = () => {
+  fetch("https://api.github.com/users/noahfranco/followers")
+  .then(down => {
+    return down.json()
+  })
+  .then(up => this.setState({followers: up}))
 
   .catch(error => {
     console.log("ERROR", error)
