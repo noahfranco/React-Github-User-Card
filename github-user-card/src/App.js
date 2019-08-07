@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Card from "./component/UserCard.js"
-import Followers from "./component/UserCard.js"
+import Followers from "./component/FollowersCard.js"
 
 
 class App extends React.Component {
@@ -51,6 +51,9 @@ render() {
     <div> 
       <h1> Noah's GitHub </h1>
       <Card  data={this.state.user} /> 
+      <Followers data={ this.state.followers.map(complie => {
+        return  this.state.followers 
+      })}  /> 
     </div>
     </section>
     
