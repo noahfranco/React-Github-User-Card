@@ -8,6 +8,20 @@
   pointer-events: none;
 }
 
+/* I added this */
+
+img {
+  width: 250px; 
+  height: 250px;
+  display: flex; 
+  align-items: center;  
+}
+
+
+/* I added this  */
+
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

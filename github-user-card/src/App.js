@@ -2,7 +2,13 @@ import React from 'react';
 import './App.css';
 import Card from "./component/UserCard.js"
 import Followers from "./component/FollowersCard.js"
+import Styled from "styled-components"; 
 
+const CenterContent = Styled.div`
+display: flex; 
+align-items: center;
+flex-direction: column 
+`
 
 class App extends React.Component {
 constructor() {
@@ -49,7 +55,9 @@ render() {
   return (
     <section>
     <div> 
+      <CenterContent> 
       <h1> Noah's GitHub </h1>
+      </CenterContent>
       <Card  data={this.state.user} /> 
       {this.state.followers.map(complie => (
         <Followers data={complie} key={complie.id} /> 

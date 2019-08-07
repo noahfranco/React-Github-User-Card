@@ -1,22 +1,26 @@
 import React from "react"; 
 import Styled from "styled-components"; 
-// import { BackgorundColor } from "./UserCard.js"
 
  const FontSize = Styled.div `
 font-size: 15px; 
 `
-// const ImgSize = Styled.div `
-// width: 40px; 
-// height: 100px; 
-// `
+const Border = Styled.div`
+border: width: 300px;
+border: 15px solid black;
+padding: 50px;
+margin: 20px;
+background: lightgray; 
+`
 
 function Followers(props) {
     console.log("this is porps",props)
     return(
         <section> 
             <div> 
-                <img src={ props.data.avatar_url } /> 
+                <Border> 
+             <img src={ props.data.avatar_url } /> 
            <FontSize>  Login: { props.data.login } </FontSize> 
+                </Border>
             </div>
         </section>
     )
