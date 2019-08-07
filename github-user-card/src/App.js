@@ -1,29 +1,32 @@
 import React from 'react';
 import './App.css';
-import axios from "axios"; 
 import Card from "./component/UserCard"
 
 class App extends React.Component {
 constructor() {
   super(); 
   this.state = {
-    user: {}
+    user: []
+
   }
 }
 
 
+componentDidMount() {
+  this.fetchUsers() 
+}
+
+
 fetchUsers = () => {
-  axios 
-  .get("https://api.github.com/users/noahfranco")
+  fetch("https://api.github.com/users/noahfranco")
+  .then(response => {
+    return response.json(); 
+  })
   .then(res => this.setState({user: res}))
- 
+
   .catch(error => {
     console.log("ERROR", error)
   })
-}
-
-componentDidMount() {
-  this.fetchUsers() 
 }
 
 render() {
@@ -33,7 +36,6 @@ render() {
     <div> 
       <h1> Noah's GitHub </h1>
       <Card  data={this.state.user} /> 
-     {/* { this.state.user.bio} */}
     </div>
     </section>
     

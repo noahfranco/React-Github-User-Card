@@ -4,8 +4,9 @@ function Card(props) {
     console.log("This is calling porps",props)
     return( 
         <div>
-           <div src={ props.user.avatar_url } /> 
-            Bio: { props.user.bio }   
+           <img src={ props.data.avatar_url } /> 
+           <div> Bio: { props.data.bio } </div>  
+           <div> Location: { props.data.location } </div>   
          </div> 
             
 
