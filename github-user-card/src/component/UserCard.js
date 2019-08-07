@@ -1,7 +1,6 @@
 import React from "react"; 
 
 function Card(props) {
-    console.log("This is calling porps",props)
     return( 
         <div>
            <img  src={ props.data.avatar_url } /> 

@@ -51,12 +51,11 @@ render() {
     <div> 
       <h1> Noah's GitHub </h1>
       <Card  data={this.state.user} /> 
-      <Followers data={ this.state.followers.map(complie => {
-        return  this.state.followers 
-      })}  /> 
+      {this.state.followers.map(complie => (
+        <Followers data={complie} key={complie.id} /> 
+      ))}
     </div>
     </section>
-    
   );
 }
 }
