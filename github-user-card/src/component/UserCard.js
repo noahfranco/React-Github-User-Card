@@ -24,6 +24,8 @@ function Card(props) {
             <CenterContent> 
            <img  src={ props.data.avatar_url } />
            <Margin> </Margin> 
+           <div> username: { props.data.login } </div>
+           <Margin> </Margin>
            <div> Bio: { props.data.bio } </div>  
            <Margin> </Margin>
            <div> Location: { props.data.location } </div> 

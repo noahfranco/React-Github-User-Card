@@ -19,7 +19,7 @@ function Followers(props) {
             <div> 
                 <Border> 
              <img src={ props.data.avatar_url } /> 
-           <FontSize>  Login: { props.data.login } </FontSize> 
+           <FontSize>  username: { props.data.login } </FontSize> 
                 </Border>
             </div>
         </section>
